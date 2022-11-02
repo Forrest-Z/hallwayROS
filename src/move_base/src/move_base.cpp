@@ -291,7 +291,7 @@ namespace move_base {
 
     action_goal.goal.target_pose.pose.position.x = data.tracks[0].pose.pose.position.x;
     action_goal.goal.target_pose.pose.position.y = data.tracks[0].pose.pose.position.y;
-    // ROS_INFO("MoveBase::goalCB is runing");
+    ROS_INFO("MoveBase::goalCB is runing");
     ROS_INFO("click goal:");
     std::cout<<action_goal.goal.target_pose<<std::endl;
 
