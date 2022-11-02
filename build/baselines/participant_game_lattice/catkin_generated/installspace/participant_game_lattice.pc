@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/install
+
+Name: participant_game_lattice
+Description: Description of participant_game_lattice
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ltime_bounded_lattice
+Requires: base_local_planner costmap_2d nav_core nav_msgs pluginlib roscpp tf tf2

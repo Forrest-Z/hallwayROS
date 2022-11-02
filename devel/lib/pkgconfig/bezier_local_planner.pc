@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/devel
+
+Name: bezier_local_planner
+Description: Description of bezier_local_planner
+Version: 0.0.0
+Cflags: -I/home/nuo/hallwayROS/src/baselines/bezier_local_planner/include
+Libs: -L${prefix}/lib -lbezier_local_planner
+Requires: base_local_planner costmap_2d nav_core nav_msgs pluginlib roscpp tf tf2

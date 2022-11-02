@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/devel
+
+Name: move_base_bridge
+Description: Description of move_base_bridge
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

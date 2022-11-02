@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/install
+
+Name: score_tools
+Description: Description of score_tools
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: nav_msgs roscpp rospy tf move_base_msgs

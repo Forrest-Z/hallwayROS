@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/install
+
+Name: limit_cycle
+Description: Description of limit_cycle
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

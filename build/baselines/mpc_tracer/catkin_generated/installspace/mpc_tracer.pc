@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/install
+
+Name: mpc_tracer
+Description: Description of mpc_tracer
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,59 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="water"/>
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="/odom" />
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <!-- dwa -->
+    <!-- <param name="base_local_planner" value="dwa_planner/DWAPlannerROS" />
+    <rosparam file="$(find move_base_bridge)/param/dwa_planner_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/robot_constrains.yaml" command="load" ns="DWAPlannerROS"/>
+    <rosparam file="$(find move_base_bridge)/param/dynamic_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/dynamic_global_costmap_params.yaml" command="load" /> -->
+
+    <!-- teb -->
+    <!-- <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+    <rosparam file="$(find move_base_bridge)/param/teb_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/robot_constrains.yaml" command="load" ns="TebLocalPlannerROS"/>
+    <rosparam file="$(find move_base_bridge)/param/dynamic_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/dynamic_global_costmap_params.yaml" command="load" /> -->
+
+    <!-- bezier -->
+    <!-- <param name="base_local_planner" value="bezier_local_planner/BezierLocalPlannerROS" />
+    <rosparam file="$(find move_base_bridge)/param/bezier_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/robot_constrains.yaml" command="load" ns="BezierLocalPlannerROS"/>
+    <rosparam file="$(find move_base_bridge)/param/dynamic_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/dynamic_global_costmap_params.yaml" command="load" /> -->
+
+    <!-- time_bounded_lattice -->
+    <!-- <param name="base_local_planner" value="time_bounded_lattice/TimeBoundedLatticeROS" />
+    <rosparam file="$(find move_base_bridge)/param/time_bounded_lattice_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/robot_constrains.yaml" command="load" ns="TimeBoundedLatticeROS"/>
+    <rosparam file="$(find move_base_bridge)/param/static_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/static_global_costmap_params.yaml" command="load" /> -->
+
+    <!-- participant_game_lattice -->
+    <!-- <param name="base_local_planner" value="participant_game_lattice/ParticipantGameLatticeROS" />
+    <rosparam file="$(find move_base_bridge)/param/participant_game_lattice_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/robot_constrains.yaml" command="load" ns="ParticipantGameLatticeROS"/>
+    <rosparam file="$(find move_base_bridge)/param/static_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/static_global_costmap_params.yaml" command="load" /> -->
+
+    <!-- api2python -->
+    <param name="base_local_planner" value="api2python/API2PythonROS" />
+    <rosparam file="$(find move_base_bridge)/param/dynamic_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find move_base_bridge)/param/dynamic_global_costmap_params.yaml" command="load" />
+
+    <!-- <param name="base_global_planner" value="voronoi_planner/VoronoiPlanner"/> -->
+
+    <rosparam file="$(find move_base_bridge)/param/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find move_base_bridge)/param/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find move_base_bridge)/param/move_base_params.yaml" command="load" />
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
+  </node>
+</launch>

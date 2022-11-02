@@ -1,0 +1,8 @@
+prefix=/home/nuo/hallwayROS/install
+
+Name: api2python
+Description: Description of api2python
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ldwa_planner
+Requires: base_local_planner costmap_2d nav_core nav_msgs pluginlib roscpp tf tf2 message_runtime

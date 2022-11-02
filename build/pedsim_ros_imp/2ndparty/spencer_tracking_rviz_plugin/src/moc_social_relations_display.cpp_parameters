@@ -1,0 +1,14 @@
+-I/home/nuo/hallwayROS/devel/include
+-I/opt/ros/melodic/include
+-I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp
+-I/usr/include/eigen3
+-I/usr/include/OGRE/Overlay
+-I/usr/include/OGRE
+-I/usr/include
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="spencer_tracking_rviz_plugin"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/home/nuo/hallwayROS/build/pedsim_ros_imp/2ndparty/spencer_tracking_rviz_plugin/src/moc_social_relations_display.cpp
+/home/nuo/hallwayROS/src/pedsim_ros_imp/2ndparty/spencer_tracking_rviz_plugin/src/social_relations_display.h
